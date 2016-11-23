@@ -1,0 +1,39 @@
+body {
+  background: blue;
+}
+
+
+
+/*before hover*/
+
+.map-container {
+position:relative;
+}
+
+#map-outline {
+  width:732px;
+  height:444px;
+  position:absolute;
+}
+
+#states-outline {
+  width:732px;
+  height:444px;
+  position:absolute;
+}
+
+.states img{
+  position:absolute;
+  display:none;
+}
+
+/*map setup*/
+
+area {
+  display:inline;
+  cursor:pointer;
+}
+
+
+
+/*on hover*/

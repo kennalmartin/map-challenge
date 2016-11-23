@@ -8,6 +8,8 @@ body {
 
 .map-container {
 position:relative;
+width:732px;
+height:444px;
 }
 
 #map-outline {
@@ -20,20 +22,21 @@ position:relative;
   width:732px;
   height:444px;
   position:absolute;
+  z-index: 100;
+
 }
 
-.states img{
+.states{
   position:absolute;
   display:none;
-}
-
-/*map setup*/
-
-area {
-  display:inline;
-  cursor:pointer;
+  z-index: 50;
 }
 
 
 
 /*on hover*/
+
+.states-hover{
+  display:inline;
+  position:absolute;
+}

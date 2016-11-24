@@ -34,9 +34,26 @@ height:444px;
 
 
 
-/*on hover*/
+/*on hover state*/
 
 .states-hover{
   display:inline;
   position:absolute;
+}
+
+
+/*on click state*/
+
+#state-div {
+  height:200px;
+  width:200px;
+  background-color:yellow;
+  position:absolute;
+  bottom:0;
+  right:0;
+  z-index:200;
+}
+
+#state-div:hover{
+ cursor:pointer;
 }

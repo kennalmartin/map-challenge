@@ -1,10 +1,50 @@
+//onclick functions
 
-//mouseover functions
+
+//depending on which state was clicked on, the following function will fire
+function stateClicked(e){
+
+  //append a div with state info
+  function addStateDiv(){
+    var d = document.createElement('div');
+    d.id = 'state-div';
+
+    //if clicked, the new div will be removed
+    d.onclick = function(){if(document.getElementById('state-div')){closeDiv(d)}};
+    d.innerHTML = 'You clicked on ' + e.target.id.slice(0, -9) + '!';
+    document.getElementById('click-div').appendChild(d);
+  }
+
+  //removes state-div
+  function closeDiv(d){
+        document.getElementById('click-div').removeChild(d);
+    }
+
+    //this checks if a state-div has already been created and removes it before creating another one
+  if(!document.getElementById('state-div')){
+      addStateDiv();
+  }
+  else{
+    closeDiv(document.getElementById('state-div'));
+    addStateDiv();
+  }
+}
+
+//this binds the function to the map on the DOM
+document.getElementById('map').addEventListener('click', stateClicked);
+
+
+
+
+//////////////////////////
+// mouseover functions////
+/////////////////////////
 
 document.getElementById('utah-area-hov').addEventListener('mouseover', function(){
   document.getElementById('utah-hover').classList.add('states-hover');
   document.getElementById('utah-hover').classList.remove('states');
 });
+
 
 document.getElementById('alaska-area-hov').addEventListener('mouseover', function(){
   document.getElementById('alaska-hover').classList.add('states-hover');
@@ -257,8 +297,9 @@ document.getElementById('oregon-area-hov').addEventListener('mouseover', functio
 
 
 
-
-//mouseout functions
+//////////////////////////
+// mouseout functions////
+/////////////////////////
 document.getElementById('utah-area-hov').addEventListener('mouseout', function(){
   document.getElementById('utah-hover').classList.add('states');
   document.getElementById('utah-hover').classList.remove('states-hover');
